@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.http  import HttpResponse
+from .models import Image
+import datetime as dt
 
 # Create your views here.
 
-def mygallery(request):
-    date = dt.date.today()
-    photos = Image.get_all()
-    return render(request, 'all-pics/home.html', {"date": date, "photos":photos})
+def index (request):
+     title = 'Welcome to the gallery'
+     date = dt.date.today()
+     pgallery = Image.objects.all()
+
+     return render(request,'index.html',{"gallery":gallery})
