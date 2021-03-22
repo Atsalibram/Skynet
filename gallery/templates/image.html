@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+ {% block content %}
+
+ <div class="container">
+
+   <div class="row mt-2">
+      <figure>
+            <img src="{{image.image.url}}"  class="img-fluid">
+      </figure>
+   </div>
+
+   <div class="row">
+     <h1 class="text-center">{{image.image_name}}</h1>
+   </div>
+
+   <div class="row">
+     <p>{{image.details}}</p>
+   </div>
+   <div class="row">
+    <p class="badge badge-primary">Category: {{image.category}}</p>
+    <p class="badge badge-danger">Location: {{image.location}}</p>
+  </div>
+
+</div>
+
+{% endblock %}
