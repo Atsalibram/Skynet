@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{% block content %} 
+{{ block.super}}
+<div class="c1">
+    <div class="imgs">
+  <!-- Looping through news   -->
+  {% for photo in pgallery %}
+  <figure>
+    <img class="img-fluid" src="{{photo.image.url}}" height="180" width="320">
+    <figcaption class="text-center">
+      
+      <div class="box-content">
+          <p>{{photo.image_name}}</p>
+        <a class="btn btn-warning more" href="image/{{photo.id}}" href="image.html">view more</a>
+        <p class="desc">{{photo.details}}</p>
+      </div>
+    </figcaption>
+  </figure>
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">There No Images...</h2>
+  </div>
+  {% endfor %}
+</div>
+<style>
+  .a-btn-warning{
+    color: #416165;
+  }
+
+</style>
+
+{% endblock %}

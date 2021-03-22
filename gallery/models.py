@@ -9,8 +9,8 @@ class Category(models.Model):
 
     @classmethod
     def search_by_name(cls,search_term):
-        pgallery = cls.objects.filter(name__icontains=search_term)
-        return pgallery
+        gallery = cls.objects.filter(name__icontains=search_term)
+        return gallery
 
     def __str__(self):
         return self.name
@@ -24,7 +24,7 @@ class Location(models.Model):
     def __str__(self):
         return self.location 
 
-        class Image(models.Model):
+class Image(models.Model):
     image=models.ImageField(upload_to='mygallery/', blank=True)
     image_link=models.TextField(blank=True)
     image_name=models.TextField(max_length=60 , blank=True)
