@@ -18,3 +18,16 @@ def image(request, image_id):
             raise Http404()
 
       return render(request,"image.html", {"image":image})
+
+def search_results(request):
+    if 'category' in request.GET and request.GET["category"]:
+        search_term=request.GET.get("category")
+        searched_categories=Category.search_by_name(search_term) 
+        message=f"{search_term}"
+
+        return render(request,'search.html',{"message":message,"categories":searched_categories})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message}) 
+
