@@ -1,4 +1,4 @@
-# My Gallery
+# Skynet
 ### This project was done using django.
 # DESCRIPTION
 A personal gallery application that you display your photos for others to see.
