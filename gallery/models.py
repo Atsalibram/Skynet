@@ -25,7 +25,7 @@ class Location(models.Model):
         return self.location 
 
 class Image(models.Model):
-    image=models.ImageField(upload_to='mygallery/', blank=True)
+    image=models.ImageField(upload_to='gallery/', blank=True)
     image_link=models.TextField(blank=True)
     image_name=models.TextField(max_length=60 , blank=True)
     details=models.TextField(max_length=60, blank=60)

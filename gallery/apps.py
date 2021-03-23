@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class GalleryConfig(AppConfig):
+class galleryConfig(AppConfig):
     name = 'gallery'
