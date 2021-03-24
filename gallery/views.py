@@ -7,9 +7,10 @@ import datetime as dt
 def index (request):
      title = 'Welcome to the gallery'
      date = dt.date.today()
-     pgallery = Image.objects.all()
+     images = Image.objects.all()
+     print (images)
 
-     return render(request,'index.html',{"gallery":gallery})
+     return render(request,'index.html',{"images":images})
 
 def image(request, image_id):
       try:
